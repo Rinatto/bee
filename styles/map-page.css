@@ -45,6 +45,11 @@
 
   .rotate-svg {
     animation: spin 2s linear infinite;
+    position: absolute;
+    top: 92px;
+    left: 588px;
+    width: 200px;
+    height: 200px;
   }
   
   @keyframes spin {
