@@ -14,27 +14,31 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+function loadHTML(url, callback) {
+  fetch(url)
+    .then(response => response.text())
+    .then(html => {
+      const contentDiv = document.querySelector(".main");
+      contentDiv.innerHTML = html;
+      if (callback) callback(); 
+    })
+    .catch(error => console.error('Failed to load page: ', error));
+}
+
+// Модифицированная функция для загрузки содержимого страницы
 export function loadPageContent(page) {
-  const contentDiv = document.querySelector(".main");
   switch (page) {
     case "activity":
-      fetch("activity.html")
-        .then((response) => response.text())
-        .then((html) => (contentDiv.innerHTML = html));
+      loadHTML("activity.html");
       break;
     case "map":
-      fetch("map.html")
-        .then((response) => response.text())
-        .then((html) => {
-          contentDiv.innerHTML = html;
-          initializeYandexMap(); // Инициализация карты после загрузки содержимого
-        });
+      loadHTML("map.html", initializeYandexMap); // Инициализация карты после загрузки
       break;
     case "time":
-      fetch("timer.html")
-        .then((response) => response.text())
-        .then((html) => (contentDiv.innerHTML = html));
+      loadHTML("timer.html");
       break;
+    default:
+      console.log("Unknown page:", page);
   }
 }
 
