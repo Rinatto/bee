@@ -1,9 +1,5 @@
 export function startTimer() {
-  let startTime = sessionStorage.getItem("start_time");
-  if (!startTime) {
-    startTime = new Date().getTime();
-    sessionStorage.setItem("start_time", startTime);
-  }
+  let startTime = new Date().getTime();
 
   function updateTimer() {
     const currentTime = new Date().getTime();
@@ -21,7 +17,7 @@ export function startTimer() {
   }
 
   function pad(number) {
-    return number < 10 ? "0" + number : number;
+    return String(number).padStart(2, '0');
   }
 
   setInterval(updateTimer, 1000);
