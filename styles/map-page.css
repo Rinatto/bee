@@ -24,15 +24,15 @@
   margin-top: 16px;
   margin-right: 32px;
 }
-.navigation-second-page-icons div {
-  margin-top: -1px;
+.navigation-second-page-icons img:nth-child(1) {
+  margin-top: 7.87px;
 }
-.navigation-second-page-icons div:nth-child(1) {
-  margin-top: -1px;
+.navigation-second-page-icons img:nth-child(2) {
+  margin-top: 4.4px;
   margin-left: 5px;
 }
-.navigation-second-page-icons div:nth-child(3) {
-  margin-top: -1px;
+.navigation-second-page-icons img:nth-child(3) {
+  margin-top: 5.3px;
   margin-right: 5px;
 }
 

@@ -11,10 +11,6 @@ body {
   width: 1440px;
   background-color: #f1f1f1;
 }
-.nav {
-  width: 1440px;
-  height: 104px;
-}
 
 .nav-top {
   width: 1440px;
@@ -155,8 +151,9 @@ body {
   margin-left: 32px;
   margin-top: 16px;
 }
-.main-content-picture-comment > div > img {
+.main-content-picture-comment > img {
   margin-left: 4px;
+  margin-top: 5px;
 }
 .main-content-picture-comment > p {
   font-weight: 400;
@@ -201,9 +198,9 @@ body {
   width: 59px;
   height: 24px;
 }
-.eye div:nth-child(1) {
-  margin-top: -1px;
-  margin-left: 3px;
+.eye > img {
+  margin-top: 5px;
+  margin-left: 2px;
 }
 .eye p {
   font-weight: 400;
@@ -214,8 +211,9 @@ body {
   width: 50px;
   height: 24px;
 }
-.com img {
-  margin-left: 5px;
+.com > img {
+  margin-left: 4px;
+  margin-top: 5px;
 }
 .com p {
   font-weight: 400;
@@ -244,14 +242,14 @@ body {
   font-weight: 400;
   font-size: 16px;
 }
-.main-content-element-rightblock div:nth-child(1) {
+.main-content-element-rightblock img:nth-child(1) {
   margin-left: 3px;
+  margin-top: 3px;
 }
-.main-content-element-rightblock div:nth-child(1) > img {
-  margin-top: -4px;
-}
-.main-content-element-rightblock div:nth-child(3) > img {
+
+.main-content-element-rightblock img:nth-child(3) {
   margin-right: 5px;
+  margin-top: 8px;
 }
 
 .main-resume {
@@ -309,9 +307,9 @@ body {
   font-size: 14px;
   margin-left: 16px;
 }
-.main-navigation-top-element div > img {
+.main-navigation-top-element > img {
   margin-right: 22px;
-  margin-top: -6px;
+  margin-top: 7px;
 }
 
 .main-navigation-middle {
@@ -326,11 +324,11 @@ body {
   width: 248px;
   height: 24px;
 }
-.main-navigation-middle-element-box div:nth-child(1) {
+.main-navigation-middle-element-box img {
   margin-left: 16px;
 }
-.main-navigation-middle-element-box > div > img {
-  margin-top: -2px;
+.main-navigation-middle-element-box > img {
+  margin-top: 3px;
 }
 .main-navigation-middle-element-box p:nth-child(2) {
   margin-left: 16px;
