@@ -4,16 +4,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuElements = document.querySelectorAll(".menu-element");
   menuElements.forEach((element) => {
     element.addEventListener("click", function () {
-      // Удаляем класс active-link со всех элементов
       menuElements.forEach((el) => el.classList.remove("active-link"));
-
-      // Добавляем класс active-link к элементу, по которому был клик
       this.classList.add("active-link");
-
       const page = this.textContent.trim().toLowerCase();
-      loadPageContent(page);
+      loadPageContent(page, true);
     });
   });
+
+  window.addEventListener("popstate", (event) => {
+    if (event.state && event.state.page) {
+      loadPageContent(event.state.page, false);
+    }
+  });
+
+  const initialPage = window.location.pathname.replace("/", "") || "activity";
+  loadPageContent(initialPage, false);
 });
 
 function loadHTML(url, callback) {
@@ -22,24 +27,29 @@ function loadHTML(url, callback) {
     .then(html => {
       const contentDiv = document.querySelector(".main");
       contentDiv.innerHTML = html;
-      if (callback) callback(); 
+      if (callback) callback();
     })
     .catch(error => console.error('Failed to load page: ', error));
 }
 
-// Модифицированная функция для загрузки содержимого страницы
-export function loadPageContent(page) {
-  switch (page) {
-    case "activity":
-      loadHTML("activity.html");
-      break;
-    case "map":
-      loadHTML("map.html", initializeYandexMap); // Инициализация карты после загрузки
-      break;
-    case "time":
-      loadHTML("timer.html");
-      break;
-    default:
-      console.log("Unknown page:", page);
+export function loadPageContent(page, addToHistory = true) {
+  const urlMap = {
+    "activity": "activity.html",
+    "map": "map.html",
+    "time": "timer.html",
+    "resume": "resume.html"
+  };
+
+  const url = urlMap[page];
+  if (!url) {
+    console.error("Unknown page:", page);
+    return;
+  }
+
+  const callback = page === "map" ? initializeYandexMap : null;
+  loadHTML(url, callback);
+
+  if (addToHistory) {
+    history.pushState({ page }, null, `/${page}`);
   }
 }
