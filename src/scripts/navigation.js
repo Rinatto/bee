@@ -53,3 +53,4 @@ export function loadPageContent(page, addToHistory = true) {
     history.pushState({ page }, null, `/${page}`);
   }
 }
+
