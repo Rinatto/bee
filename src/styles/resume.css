@@ -1,16 +1,52 @@
 body {
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 0;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  padding: 15px;
+  max-height: 100vh;
+  overflow-y: auto;
 }
 
 .card {
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .MyPhoto {
-    width: 70px;
-    height: 70px
+  width: 100px;
+  height: 100px;
+}
+
+
+@media (max-width: 768px) {
+  .card {
+    max-width: 90%;
+  }
+
+  .MyPhoto {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    max-width: 100%;
+  }
+
+  .MyPhoto {
+    width: 60px;
+    height: 60px;
+  }
 }

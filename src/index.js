@@ -37,7 +37,6 @@ import arrow4NavImg from './images/main-navigation/Arrow4.svg';
 
 import { initializeYandexMap } from './scripts/yandexMap';
 import { loadPageContent } from './scripts/navigation';
-import { startTimer } from './scripts/timer';
 
 document.addEventListener('DOMContentLoaded', function() {
     loadPageContent();
