@@ -41,7 +41,6 @@ import { startTimer } from './scripts/timer';
 
 document.addEventListener('DOMContentLoaded', function() {
     loadPageContent();
-    startTimer();
     initializeYandexMap();
 
     const setImageSrc = (selector, src) => {
