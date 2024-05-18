@@ -1,5 +1,5 @@
 import { initializeYandexMap } from "./yandexMap.js";
-import { startTimer } from "./timer.js";
+import { startTimer, stopTimer } from "./timer.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const menuElements = document.querySelectorAll(".menu-element");
@@ -45,6 +45,10 @@ export function loadPageContent(page, addToHistory = true) {
   if (!url) {
     console.error("Unknown page:", page);
     return;
+  }
+
+  if (page !== "time") {
+    stopTimer();
   }
 
   let callback = null;
