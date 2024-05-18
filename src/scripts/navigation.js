@@ -4,26 +4,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuElements = document.querySelectorAll(".menu-element");
   menuElements.forEach((element) => {
     element.addEventListener("click", function () {
+      // Удаляем класс active-link со всех элементов
       menuElements.forEach((el) => el.classList.remove("active-link"));
+
+      // Добавляем класс active-link к элементу, по которому был клик
       this.classList.add("active-link");
-      
+
       const page = this.textContent.trim().toLowerCase();
       loadPageContent(page);
-
-      // Обновляем URL без перезагрузки страницы
-      history.pushState({ page }, "", `#${page}`);
     });
   });
-
-  // Обрабатываем событие изменения истории (нажатие кнопок "назад"/"вперед")
-  window.addEventListener("popstate", (event) => {
-    const page = event.state ? event.state.page : "activity";
-    loadPageContent(page);
-  });
-
-  // Загружаем контент в зависимости от текущего URL при загрузке страницы
-  const currentPage = window.location.hash.substring(1) || "activity";
-  loadPageContent(currentPage);
 });
 
 function loadHTML(url, callback) {
@@ -32,7 +22,7 @@ function loadHTML(url, callback) {
     .then(html => {
       const contentDiv = document.querySelector(".main");
       contentDiv.innerHTML = html;
-      if (callback) callback();
+      if (callback) callback(); 
     })
     .catch(error => console.error('Failed to load page: ', error));
 }

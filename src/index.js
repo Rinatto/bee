@@ -25,7 +25,7 @@ import arrow4Img from './images/main-content/arrow4.svg';
 import telegramImg from './images/main-resume/telegramm.svg';
 import hhImg from './images/main-resume/hh.svg';
 import twitterImg from './images/main-resume/twitter.svg';
-import avatarImg from './images/main-resume/Avatar.svg';
+import Avatar from './images/main-resume/Avatar.png';
 import profileImg from './images/main-navigation/Profile.svg';
 import balanceImg from './images/main-navigation/Balance.svg';
 import connectImg from './images/main-navigation/Connect.svg';
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { selector: 'img[alt="settings"]', src: accountSettingsImg },
         { selector: 'img[alt="Arrow3Nav"]', src: arrow3NavImg },
         { selector: 'img[alt="Arrow4Nav"]', src: arrow4NavImg },
-        { selector: 'img[alt="Avatar"]', src: avatarImg },
+        { selector: 'img[alt="Avatar"]', src: Avatar }
     ];
 
     images.forEach(({ selector, src }) => {
