@@ -1,14 +1,14 @@
-const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require('path');
 
 module.exports = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.[contenthash].js',
-    publicPath: '/bee/',
+    publicPath: '/bee/', // Убедитесь, что здесь правильный путь
   },
   module: {
     rules: [
@@ -34,7 +34,7 @@ module.exports = {
         { from: 'src/map.html', to: 'map.html' },
         { from: 'src/timer.html', to: 'timer.html' },
         { from: 'src/resume.html', to: 'resume.html' },
-        { from: 'src/images', to: 'images' }, 
+        { from: 'src/images', to: 'images' },
       ],
     }),
   ],
@@ -46,3 +46,4 @@ module.exports = {
   },
   mode: 'development'
 };
+
