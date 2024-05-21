@@ -34,6 +34,12 @@ import eventsImg from './images/main-navigation/Events.svg';
 import accountSettingsImg from './images/main-navigation/AccountSettings.svg';
 import arrow3NavImg from './images/main-navigation/Arrow3.svg';
 import arrow4NavImg from './images/main-navigation/Arrow4.svg';
+import arrow5Img from './images/nav-second-page/arrow5.svg';
+import arrow6Img from './images/nav-second-page/arrow6.svg';
+import closeImg from './images/nav-second-page/close.svg';
+import close2Img from './images/nav-second-page/close2.svg';
+import UpdateImg from './images/nav-second-page/Update.svg';
+import Update2Img from './images/nav-second-page/Update2.svg';
 
 import { initializeYandexMap } from './scripts/yandexMap';
 import { loadPageContent } from './scripts/navigation';
@@ -81,6 +87,12 @@ document.addEventListener('DOMContentLoaded', function() {
         { selector: 'img[alt="settings"]', src: accountSettingsImg },
         { selector: 'img[alt="Arrow3Nav"]', src: arrow3NavImg },
         { selector: 'img[alt="Arrow4Nav"]', src: arrow4NavImg },
+        { selector: 'img[alt="Arrow5Nav"]', src: arrow5Img },
+        { selector: 'img[alt="Arrow6Nav"]', src: arrow6Img },
+        { selector: 'img[alt="close"]', src: closeImg },
+        { selector: 'img[alt="close2"]', src: close2Img },
+        { selector: 'img[alt="Update"]', src: UpdateImg },
+        { selector: 'img[alt="Update2"]', src: Update2Img },
         { selector: 'img[alt="Avatar"]', src: Avatar }
     ];
 

@@ -4,7 +4,7 @@ let mapInitialized = false;
 export function initializeYandexMap() {
   const mapContainer = document.getElementById("yandexMap");
   if (mapContainer && !mapInitialized) {
-    const apiKey = process.env.REACT_APP_MAPS_API_KEY;
+    const apiKey = process.env.APP_MAPS_API_KEY;
     const script = document.createElement("script");
     script.type = "text/javascript";
     script.async = true;
