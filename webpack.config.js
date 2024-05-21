@@ -6,7 +6,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, 'root'),
+    path: path.resolve(__dirname, 'docs'),
     filename: 'bundle.[contenthash].js',
     publicPath: process.env.PUBLIC_PATH || '/'
   },
