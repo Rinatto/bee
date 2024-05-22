@@ -45,6 +45,9 @@ module.exports = {
     compress: true,
     port: 8080,
     historyApiFallback: true,
+    headers: {
+      'Permissions-Policy': 'interest-cohort=()' // Отключаем фичу interest-cohort
+    }
   },
   mode: 'development'
 };
