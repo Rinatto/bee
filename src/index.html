@@ -332,7 +332,8 @@ Enter your message...</textarea
         </section>
       </article>
     </main>
-    <script type="module" src="index.js" async></script>
+    <script defer="defer" src="<%= htmlWebpackPlugin.files.js[0] %>"></script>
   </body>
 </html>
 <!-- <script defer="defer" src="<%= htmlWebpackPlugin.files.js[0] %>"></script> -->
+<!-- <script type="module" src="index.js" async></script> -->
