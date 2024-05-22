@@ -67,6 +67,10 @@ body {
   font-weight: 400;
   font-size: 14px;
 }
+.menu-element {
+  text-decoration: none;
+  color: #505050;
+}
 
 .menu-element p {
   margin: 0;
