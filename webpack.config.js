@@ -8,7 +8,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'docs'),
     filename: 'bundle.[contenthash].js',
-    publicPath: '/bee/'
+    publicPath: process.env.PUBLIC_PATH || '/'
   },
   module: {
     rules: [
