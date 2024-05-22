@@ -35,10 +35,13 @@ import accountSettingsImg from './images/main-navigation/AccountSettings.svg';
 import arrow3NavImg from './images/main-navigation/Arrow3.svg';
 import arrow4NavImg from './images/main-navigation/Arrow4.svg';
 
+import { initializeYandexMap } from './scripts/yandexMap';
 import { loadPageContent } from './scripts/navigation';
+
 
 document.addEventListener('DOMContentLoaded', function() {
     loadPageContent();
+    initializeYandexMap();
 
     const setImageSrc = (selector, src) => {
         const imgElement = document.querySelector(selector);
