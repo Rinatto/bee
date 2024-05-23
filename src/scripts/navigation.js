@@ -8,7 +8,16 @@ document.addEventListener("DOMContentLoaded", () => {
       event.preventDefault(); // предотвращаем стандартное поведение ссылки
       menuElements.forEach((el) => el.classList.remove("active-link"));
       this.classList.add("active-link");
-      const page = this.getAttribute("href").replace("/", "");
+      const page = this.getAttribute("href").replace("/bee/", "");
+      loadPageContent(page, true);
+    });
+  });
+
+  // Обработчик кликов для всех ссылок <a>
+  document.querySelectorAll('a').forEach(anchor => {
+    anchor.addEventListener('click', function (event) {
+      event.preventDefault();
+      const page = this.getAttribute("href").replace("/bee/", "");
       loadPageContent(page, true);
     });
   });
@@ -22,12 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const initialPage = window.location.pathname.replace("/bee/", "") || "index";
-  if (!["activity", "map", "timer", "resume"].includes(initialPage)) {
-    history.replaceState(null, null, "/bee/");
-    loadPageContent("index", false);
-  } else {
-    loadPageContent(initialPage, false);
-  }
+  loadPageContent(initialPage, false);
 });
 
 function loadHTML(url, callback) {
@@ -40,8 +44,10 @@ function loadHTML(url, callback) {
     })
     .catch(error => {
       console.error('Failed to load page: ', error);
-      history.replaceState(null, null, "/bee/");
-      loadPageContent("index", true);
+      if (url !== "/bee/index.html") {
+        history.replaceState(null, null, "/bee/");
+        loadPageContent("index", true);
+      }
     });
 }
 
@@ -50,7 +56,8 @@ export function loadPageContent(page, addToHistory = true) {
     "activity": "activity.html",
     "map": "map.html",
     "timer": "timer.html",
-    "resume": "resume.html"
+    "resume": "resume.html",
+    "index": "index.html"  // Добавляем индексную страницу
   };
 
   const url = urlMap[page];
@@ -78,3 +85,4 @@ export function loadPageContent(page, addToHistory = true) {
     history.pushState({ page }, null, `/bee/${page}`);
   }
 }
+
