@@ -4,10 +4,11 @@ import { startTimer, stopTimer } from "./timer.js";
 document.addEventListener("DOMContentLoaded", () => {
   const menuElements = document.querySelectorAll(".menu-element");
   menuElements.forEach((element) => {
-    element.addEventListener("click", function () {
+    element.addEventListener("click", function (event) {
+      event.preventDefault(); // предотвращаем стандартное поведение ссылки
       menuElements.forEach((el) => el.classList.remove("active-link"));
       this.classList.add("active-link");
-      const page = this.textContent.trim().toLowerCase();
+      const page = this.getAttribute("href").replace("/", "");
       loadPageContent(page, true);
     });
   });
@@ -58,7 +59,7 @@ export function loadPageContent(page, addToHistory = true) {
     callback = startTimer;
   }
 
-  loadHTML(url, callback);
+  loadHTML(`/bee/${url}`, callback);
 
   if (addToHistory) {
     history.pushState({ page }, null, `/${page}`);
