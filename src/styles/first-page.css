@@ -423,4 +423,386 @@ body {
   font-size: 14px;
   font-weight: 500;
 }
-/* 478 */
+/* ---------------------------------------------------------------------------------------------------- */
+
+@media (max-width: 1440px) {
+  .content {
+    width: 100%;
+    padding: 0 1em;
+  }
+  .nav-top {
+    width: 100%;
+    flex-wrap: wrap;
+    align-content: space-between;
+  }
+  .main {
+    height: auto;
+  }
+  .main-content {
+    height: auto;
+  }
+  .main-content-picture {
+    height: auto;
+    width: 100%;
+  }
+  .main-content-picture > img {
+    width: 100%;
+  }
+  .main-content-picture-text {
+    width: 100%;
+  }
+  .main-content-element {
+    width: 100%;
+  }
+  .main-resume {
+    width: 100%;
+    height: auto;
+    margin-left: 1em;
+  }
+  .main-navigation {
+    width: 100%;
+    height: auto;
+    margin-top: 1em;
+    margin-left: 1em;
+    position: static;
+  }
+  .balance {
+    margin-left: 1em;
+  }
+  .connections {
+    margin-left: 1em;
+  }
+  .main-content-picture-amount {
+    margin-left: 1em;
+    margin-top: 1em;
+  }
+  .events {
+    margin-left: 1em;
+  }
+  .main-share {
+    width: 100%;
+    height: auto;
+    margin-top: 1em;
+    position: static;
+    margin-left: 1em;
+  }
+  .message {
+    margin-left: 1em;
+    margin-top: 1em;
+    width: 100%;
+    height: auto;
+  }
+  .button-textarea {
+    width: 100%;
+    height: auto;
+    margin-left: 1em;
+    margin-top: 0.5em;
+  }
+}
+
+/* ---------------------------------------------------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .content {
+    width: 100%;
+    padding: 0 1em;
+  }
+  .nav-top {
+    width: 100%;
+    flex-wrap: wrap;
+    align-content: space-between;
+  }
+  .statistic {
+    width: 100%;
+    margin-top: 0.5em;
+  }
+  .nav-bottom {
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  .menu, .menu-second {
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+  }
+  .main {
+    width: 100%;
+    height: auto;
+  }
+  .main-content {
+    width: 100%;
+    height: auto;
+  }
+  .main-content-picture {
+    height: auto;
+    width: 100%;
+  }
+  .main-content-picture > img {
+    width: 100%;
+  }
+  .main-content-picture-text {
+    width: 100%;
+  }
+  .main-content-element {
+    width: 100%;
+  }
+  .main-resume {
+    width: 100%;
+    height: auto;
+    margin-left: 1em;
+  }
+  .main-navigation {
+    width: 100%;
+    height: auto;
+    margin-top: 1em;
+    margin-left: 1em;
+    position: static;
+  }
+  .balance {
+    margin-left: 1em;
+  }
+  .connections {
+    margin-left: 1em;
+  }
+  .main-content-picture-amount {
+    margin-left: 1em;
+    margin-top: 1em;
+  }
+  .events {
+    margin-left: 1em;
+  }
+  .main-share {
+    width: 100%;
+    height: auto;
+    margin-top: 1em;
+    position: static;
+    margin-left: 1em;
+  }
+  .message {
+    margin-left: 1em;
+    margin-top: 1em;
+    width: 100%;
+  }
+  .button-textarea {
+    width: 100%;
+    margin-left: 1em;
+    margin-top: 0.5em;
+  }
+}
+
+/* ---------------------------------------------------------------------------------------------------- */
+
+@media (max-width: 768px) {
+  .content {
+    width: 100%;
+    padding: 0 1em;
+  }
+  .nav-top {
+    width: 100%;
+    flex-wrap: wrap;
+    align-content: space-between;
+  }
+  .statistic {
+    width: 100%;
+    margin-top: 0.5em;
+  }
+  .statistic-element {
+    width: auto;
+    margin: 0;
+  }
+  .nav-bottom {
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  .menu, .menu-second {
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+  }
+  .menu-element {
+    margin-top: 0.5em;
+    flex: 1 1 auto;
+    text-align: center;
+  }
+  .main {
+    height: auto;
+    width: 100%;
+  }
+  .main-content {
+    height: auto;
+    width: 100%;
+  }
+  .main-content-picture {
+    height: auto;
+    width: 100%;
+  }
+  .main-content-picture > img {
+    width: 100%;
+  }
+  .main-content-picture-comment > p > span {
+    color: #505050;
+  }
+  .main-content-picture-text {
+    width: 100%;
+  }
+  .main-content-element {
+    width: 100%;
+  }
+  .main-resume {
+    width: 100%;
+    height: auto;
+    margin-left: 1em;
+  }
+  .main-navigation {
+    width: 100%;
+    height: auto;
+    margin-top: 1em;
+    margin-left: 1em;
+    position: static;
+  }
+  .balance {
+    margin-left: 1em;
+  }
+  .connections {
+    margin-left: 1em;
+  }
+  .main-content-picture-amount {
+    margin-left: 1em;
+    margin-top: 1em;
+  }
+  .events {
+    margin-left: 1em;
+  }
+  .main-share {
+    width: 100%;
+    height: auto;
+    margin-top: 1em;
+    position: static;
+    margin-left: 1em;
+  }
+  .message {
+    margin-left: 1em;
+    margin-top: 1em;
+    width: 100%;
+    height: auto;
+  }
+  .button-textarea {
+    width: 100%;
+    height: auto;
+    margin-left: 1em;
+    margin-top: 0.5em;
+  }
+}
+
+/* ---------------------------------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .content {
+    width: 100%;
+    padding: 0 1em;
+  }
+  .nav-top {
+    width: 100%;
+    flex-wrap: wrap;
+    align-content: space-between;
+  }
+  .text-profile {
+    height: auto;
+    margin-top: 1em;
+    margin-left: 0;
+  }
+  .statistic {
+    width: 100%;
+    margin-top: 0.5em;
+  }
+  .statistic-element {
+    margin: 0;
+  }
+  .nav-bottom {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .menu, .menu-second {
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+  }
+  .main {
+    height: auto;
+  }
+  .main-content {
+    height: auto;
+    width: 100%;
+    margin-left: 0.5em;
+  }
+  .main-content-picture {
+    height: auto;
+    width: 100%;
+  }
+  .main-content-picture > img {
+    margin-top: 0.5em;
+    margin-left: 0.5em;
+    width: 100%;
+  }
+  .main-content-picture-text {
+    width: 100%;
+  }
+  .main-content-border {
+    width: 2px;
+    background-color: #d3d8de;
+    height: 4em;
+    position: absolute;
+  }
+  .main-content-element {
+    width: 100%;
+  }
+  .main-resume {
+    width: auto;
+    height: auto;
+    margin-left: 0.5em;
+    margin-top: 0;
+  }
+  .main-resume-text p {
+    margin: 0;
+  }
+  .main-navigation {
+    width: auto;
+    height: auto;
+    margin-top: 1em;
+    margin-left: 0.5em;
+    position: static;
+  }
+  .balance {
+    margin-left: 1em;
+  }
+  .connections {
+    margin-left: 1em;
+  }
+  .main-content-picture-amount {
+    margin-left: 1em;
+    margin-top: 1em;
+  }
+  .events {
+    margin-left: 1em;
+  }
+  .main-share {
+    width: auto;
+    height: auto;
+    margin-top: 1em;
+    position: static;
+    margin-left: 1em;
+  }
+  .message {
+    margin-left: 1em;
+    margin-top: 1em;
+    width: auto;
+    height: auto;
+  }
+  .button-textarea {
+    width: auto;
+    margin-left: 1em;
+    margin-top: 0.5em;
+  }
+}

@@ -16,11 +16,18 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("popstate", (event) => {
     if (event.state && event.state.page) {
       loadPageContent(event.state.page, false);
+    } else {
+      loadPageContent("index", false);
     }
   });
 
-  const initialPage = window.location.pathname.replace("/", "") || "activity";
-  loadPageContent(initialPage, false);
+  const initialPage = window.location.pathname.replace("/bee/", "") || "index";
+  if (!["activity", "map", "timer", "resume"].includes(initialPage)) {
+    history.replaceState(null, null, "/bee/");
+    loadPageContent("index", false);
+  } else {
+    loadPageContent(initialPage, false);
+  }
 });
 
 function loadHTML(url, callback) {
@@ -31,7 +38,11 @@ function loadHTML(url, callback) {
       contentDiv.innerHTML = html;
       if (callback) callback();
     })
-    .catch(error => console.error('Failed to load page: ', error));
+    .catch(error => {
+      console.error('Failed to load page: ', error);
+      history.replaceState(null, null, "/bee/");
+      loadPageContent("index", true);
+    });
 }
 
 export function loadPageContent(page, addToHistory = true) {
@@ -45,6 +56,8 @@ export function loadPageContent(page, addToHistory = true) {
   const url = urlMap[page];
   if (!url) {
     console.error("Unknown page:", page);
+    history.replaceState(null, null, "/bee/");
+    loadPageContent("index", true);
     return;
   }
 
@@ -62,6 +75,6 @@ export function loadPageContent(page, addToHistory = true) {
   loadHTML(`/bee/${url}`, callback);
 
   if (addToHistory) {
-    history.pushState({ page }, null, `/${page}`);
+    history.pushState({ page }, null, `/bee/${page}`);
   }
 }
