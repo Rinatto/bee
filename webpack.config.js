@@ -40,7 +40,6 @@ module.exports = {
         { from: 'src/images', to: 'images' },
         { from: 'src/styles', to: 'styles' },
         { from: 'src/scripts', to: 'scripts' },
-        { from: 'src/404.html', to: '404.html' } 
       ],
     }),
   ],
@@ -48,13 +47,7 @@ module.exports = {
     static: path.join(__dirname, 'src'),
     compress: true,
     port: 8080,
-    historyApiFallback: {
-      index: 'index.html',
-      rewrites: [
-        { from: /^\/$/, to: 'index.html' },
-        { from: /./, to: '404.html' } // Добавлено перенаправление на 404 страницу для всех неизвестных маршрутов
-      ]
-    },
+    historyApiFallback: true,
     headers: {
       'Permissions-Policy': 'interest-cohort=()' // Отключаем фичу interest-cohort
     }
