@@ -38,7 +38,7 @@ export function loadPageContent(page, addToHistory = true) {
   const urlMap = {
     "activity": "activity.html",
     "map": "map.html",
-    "time": "timer.html",
+    "timer": "timer.html",
     "resume": "resume.html"
   };
 
@@ -48,14 +48,14 @@ export function loadPageContent(page, addToHistory = true) {
     return;
   }
 
-  if (page !== "time") {
+  if (page !== "timer") {
     stopTimer();
   }
 
   let callback = null;
   if (page === "map") {
     callback = initializeYandexMap;
-  } else if (page === "time") {
+  } else if (page === "timer") {
     callback = startTimer;
   }
 
