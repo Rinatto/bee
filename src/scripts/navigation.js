@@ -31,7 +31,10 @@ function loadHTML(url, callback) {
       contentDiv.innerHTML = html;
       if (callback) callback();
     })
-    .catch(error => console.error('Failed to load page: ', error));
+    .catch(error => {
+      console.error('Failed to load page: ', error);
+      loadHTML('/bee/404.html');
+    });
 }
 
 export function loadPageContent(page, addToHistory = true) {
@@ -45,6 +48,7 @@ export function loadPageContent(page, addToHistory = true) {
   const url = urlMap[page];
   if (!url) {
     console.error("Unknown page:", page);
+    loadHTML('/bee/404.html');
     return;
   }
 
