@@ -17,11 +17,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (event.state && event.state.page) {
       loadPageContent(event.state.page, false);
     } else {
-      loadPageContent("activity", false); // Загружаем страницу activity при перезагрузке
+      loadPageContent("index", false); // Загружаем страницу index при перезагрузке
     }
   });
 
-  const initialPage = window.location.pathname === "/bee/" ? "activity" : window.location.pathname.replace("/bee/", "");
+  const initialPage = window.location.pathname === "/bee/" ? "index" : window.location.pathname.replace("/bee/", "");
   loadPageContent(initialPage, false);
 });
 
@@ -41,7 +41,8 @@ export function loadPageContent(page, addToHistory = true) {
     "activity": "activity.html",
     "map": "map.html",
     "timer": "timer.html",
-    "resume": "resume.html"
+    "resume": "resume.html",
+    "index": "index.html",
   };
 
   const url = urlMap[page];
