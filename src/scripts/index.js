@@ -5,6 +5,6 @@ import '../styles/resume.css';
 import { loadPageContent } from './navigation';
 
 document.addEventListener('DOMContentLoaded', function() {
-    const initialPage = window.location.pathname.replace("/", "") || "index";
+    const initialPage = window.location.pathname.replace("/", "") || "activity";
     loadPageContent(initialPage, false);
 });

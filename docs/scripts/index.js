@@ -1,1 +1,1 @@
-import"../styles/first-page.css";import"../styles/map-page.css";import"../styles/resume.css";import{loadPageContent}from"./navigation";document.addEventListener("DOMContentLoaded",(function(){const t=window.location.pathname.replace("/","")||"index";loadPageContent(t,!1)}));
+import"../styles/first-page.css";import"../styles/map-page.css";import"../styles/resume.css";import{loadPageContent}from"./navigation";document.addEventListener("DOMContentLoaded",(function(){const t=window.location.pathname.replace("/","")||"activity";loadPageContent(t,!1)}));
