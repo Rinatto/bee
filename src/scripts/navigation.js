@@ -16,10 +16,12 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("popstate", (event) => {
     if (event.state && event.state.page) {
       loadPageContent(event.state.page, false);
+    } else {
+      loadPageContent("activity", false); // Загружаем страницу activity при перезагрузке
     }
   });
 
-  const initialPage = window.location.pathname.replace("/", "") || "activity";
+  const initialPage = window.location.pathname === "/bee/" ? "activity" : window.location.pathname.replace("/bee/", "");
   loadPageContent(initialPage, false);
 });
 
@@ -31,10 +33,7 @@ function loadHTML(url, callback) {
       contentDiv.innerHTML = html;
       if (callback) callback();
     })
-    .catch(error => {
-      console.error('Failed to load page: ', error);
-      loadHTML('/bee/404.html');
-    });
+    .catch(error => console.error('Failed to load page: ', error));
 }
 
 export function loadPageContent(page, addToHistory = true) {
@@ -48,7 +47,6 @@ export function loadPageContent(page, addToHistory = true) {
   const url = urlMap[page];
   if (!url) {
     console.error("Unknown page:", page);
-    loadHTML('/bee/index.html');
     return;
   }
 
@@ -66,6 +64,6 @@ export function loadPageContent(page, addToHistory = true) {
   loadHTML(`/bee/${url}`, callback);
 
   if (addToHistory) {
-    history.pushState({ page }, null, `/${page}`);
+    history.pushState({ page }, null, `/bee/${page}`);
   }
 }
