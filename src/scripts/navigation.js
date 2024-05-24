@@ -32,10 +32,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  const initialPage = window.location.pathname.replace("/bee/", "") || "activity";
+  const initialPage = window.location.pathname.replace("/bee/", "") || "index";
   if (!["activity", "map", "timer", "resume"].includes(initialPage)) {
     history.replaceState(null, null, "/bee/");
-    loadPageContent("activity", false);
+    loadPageContent("index", false);
   } else {
     loadPageContent(initialPage, false);
   }
@@ -52,7 +52,7 @@ function loadHTML(url, callback) {
     .catch(error => {
       console.error('Failed to load page: ', error);
       history.replaceState(null, null, "/bee/");
-      loadPageContent("activity", true);
+      loadPageContent("index", true);
     });
 }
 
@@ -68,7 +68,7 @@ export function loadPageContent(page, addToHistory = true) {
   if (!url) {
     console.error("Unknown page:", page);
     history.replaceState(null, null, "/bee/");
-    loadPageContent("activity", true);
+    loadPageContent("index", true);
     return;
   }
 
