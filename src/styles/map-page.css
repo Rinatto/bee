@@ -72,8 +72,7 @@
 @media (max-width: 1024px) {
   .main-map {
     width: 100%;
-    height: 660px;
-    margin-top: 2em;
+    height: auto;
   }
 
   .main-content-map {
@@ -133,8 +132,7 @@
 @media (max-width: 768px) {
   .main-map {
     width: 100%;
-    height: 660px;
-    margin-top: 2em;
+    height: auto;
   }
 
   .main-content-map {
@@ -194,8 +192,7 @@
 @media (max-width: 480px) {
   .main-map {
     width: 100%;
-    height: 660px;
-    margin-top: 2em;
+    height: auto;
   }
 
   .main-content-map {
