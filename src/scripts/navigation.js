@@ -1,6 +1,8 @@
 import { initializeYandexMap } from "./yandexMap.js";
 import { startTimer, stopTimer } from "./timer.js";
 
+let pageCache = {}; // Кэш для страниц
+
 document.addEventListener("DOMContentLoaded", () => {
   const menuElements = document.querySelectorAll(".menu-element");
 
@@ -42,18 +44,21 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function loadHTML(url, callback) {
-  fetch(url)
-    .then(response => response.text())
-    .then(html => {
-      const contentDiv = document.querySelector(".main");
-      contentDiv.innerHTML = html;
-      if (callback) callback();
-    })
-    .catch(error => {
-      console.error('Failed to load page: ', error);
-      history.replaceState(null, null, "/bee/");
-      loadPageContent("index", true);
-    });
+  if (pageCache[url]) {
+    callback(pageCache[url]);
+  } else {
+    fetch(url)
+      .then(response => response.text())
+      .then(html => {
+        pageCache[url] = html;
+        callback(html);
+      })
+      .catch(error => {
+        console.error('Failed to load page: ', error);
+        history.replaceState(null, null, "/bee/");
+        loadPageContent("index", true);
+      });
+  }
 }
 
 export function loadPageContent(page, addToHistory = true) {
@@ -83,7 +88,11 @@ export function loadPageContent(page, addToHistory = true) {
     callback = startTimer;
   }
 
-  loadHTML(`/bee/${url}`, callback);
+  loadHTML(`/bee/${url}`, (html) => {
+    const contentDiv = document.querySelector(".main");
+    contentDiv.innerHTML = html;
+    if (callback) callback();
+  });
 
   if (addToHistory) {
     history.pushState({ page }, null, `/bee/${page}`);
